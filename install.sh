@@ -18,7 +18,7 @@
 
 if [[ $EUID -ne 0 ]]; then
     for node in '.bash_profile' '.bash_login'; do
-        if [ -f ~/$node ] || [ -d ~/$node ]; then
+        if [ -e ~/$node ] || [ -d ~/$node ]; then
             mkdir -p ~/.dotfiles.bak
             mv ~/$node ~/.dotfiles.bak/$node
         fi
@@ -27,7 +27,7 @@ if [[ $EUID -ne 0 ]]; then
     # Install/Link all dotfiles.
     for node in '.bashrc' '.inputrc' '.profile' '.vimrc' \
         '.tmux.conf' '.ctags' '.gitconfig'; do
-        if [ -f ~/$node ] || [ -d ~/$node ]; then
+        if [ -e ~/$node ] || [ -d ~/$node ]; then
             mkdir -p ~/.dotfiles.bak
             mv ~/$node ~/.dotfiles.bak/$node
         fi
@@ -58,7 +58,7 @@ else
     homedir=$HOME
 
     for node in '.bash_profile' '.bash_login'; do
-        if [ -f $homedir/$node ] || [ -d $homedir/$node ]; then
+        if [ -e $homedir/$node ] || [ -d $homedir/$node ]; then
             sudo -u $username mkdir -p $homedir/.dotfiles.bak
             mv $homedir/$node $homedir/.dotfiles.bak/$node
         fi
@@ -67,7 +67,7 @@ else
     # Install/Link all dotfiles.
     for node in '.bashrc' '.inputrc' '.profile' '.vimrc' \
         '.tmux.conf' '.ctags' '.gitconfig'; do
-        if [ -f $homedir/$node ] || [ -d $homedir/$node ]; then
+        if [ -e $homedir/$node ] || [ -d $homedir/$node ]; then
             sudo -u $username mkdir -p $homedir/.dotfiles.bak
             mv $homedir/$node $homedir/.dotfiles.bak/$node
         fi
