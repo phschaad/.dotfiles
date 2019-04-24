@@ -1,0 +1,37 @@
+# phschaad dotfiles
+# Copyright (C) 2019  Philipp Schaad
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# Basic config.
+--recursive=yes
+--tag-relative=yes
+
+# Exclude everything that doesn't need to or shouldn't be indexed.
+--exclude=.git
+--exclude=.idea
+--exclude=node_modules
+--exclude=test
+--exclude=tests
+--exclude=vendor
+--exclude=log
+--exclude=logs
+--exclude=tmp
+--exclude=composer.json
+--exclude=composer.lock
+
+# PHP Specific:
+# Remove variables and aliases to reduce the noise level. Include classes,
+# interfaces, functions, namespaces, and traits.
+--PHP-kinds=+cfit-va
