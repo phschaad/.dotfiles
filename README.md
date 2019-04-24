@@ -58,7 +58,7 @@ To use this selection of dotfiles without any modification you should clone
 this repository into your home directory as a hidden folder as follows:
 
 ```
-git clone https://github.com/phschaad/dotfiles ~/.dotfiles
+git clone https://github.com/phschaad/.dotfiles ~/.dotfiles
 ```
 
 After this, check if the included install script is marked as executable. If
