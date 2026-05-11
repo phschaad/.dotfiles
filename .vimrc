@@ -1,5 +1,5 @@
 " phschaad dotfiles
-" Copyright (C) 2019  Philipp Schaad
+" Copyright (C) 2026 Philipp Schaad
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -108,3 +108,4 @@ set signcolumn=yes
 
 " Load Mappings:
 source ~/.dotfiles/vim/mappings.vim
+

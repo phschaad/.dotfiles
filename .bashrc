@@ -1,5 +1,5 @@
 # phschaad dotfiles
-# Copyright (C) 2019  Philipp Schaad
+# Copyright (C) 2026 Philipp Schaad
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -70,9 +70,9 @@ source ~/.dotfiles/bash/aliases.sh
 # Custom bash prompt.
 source ~/.dotfiles/bash/prompt.sh
 
-# Setup thefuck.
-eval $(thefuck --alias)
-eval $(thefuck --alias FUCK)
-
 # Set up fzf if we have it installed.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Read in machine-specific file if it exists.
+[ -f ~/.bashrc.machine ] && source ~/.bashrc.machine
+

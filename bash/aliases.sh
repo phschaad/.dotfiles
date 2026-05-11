@@ -1,5 +1,5 @@
 # phschaad dotfiles
-# Copyright (C) 2019  Philipp Schaad
+# Copyright (C) 2026 Philipp Schaad
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,17 +20,8 @@ alias q='exit'
 # Clear alias.
 alias c='clear'
 
-# Lazy alias for opening files in gnome.
-alias open='gnome-open'
-
 # Remove outdated cp and replace with rsync.
 alias cp='rsync -ahP'
-#alias scp='rsync -ahPz'
-
-# Quick edit bashrc, vimrc, and tmux config.
-alias vrc='vim ~/.vimrc'
-alias brc='vim ~/.bashrc'
-alias trc='vim ~/.tmux.conf'
 
 # Enable color support of ls and also add handy aliases.
 if [ -x /usr/bin/dircolors ]; then
@@ -50,10 +41,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Easy upwards changing of directories.
-alias ..='cd ..'
-alias ..,..='cd ../..'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -62,3 +49,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -x /usr/bin/nvim ]; then
     alias vim='nvim'
 fi
+

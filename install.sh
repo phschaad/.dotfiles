@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # phschaad dotfiles
-# Copyright (C) 2019  Philipp Schaad
+# Copyright (C) 2026 Philipp Schaad
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ if [[ $EUID -ne 0 ]]; then
 
     # Install/Link all dotfiles.
     for node in '.bashrc' '.inputrc' '.profile' '.vimrc' \
-        '.tmux.conf' '.ctags' '.gitconfig'; do
+        '.ctags' '.gitconfig'; do
         if [ -e ~/$node ] || [ -d ~/$node ]; then
             mkdir -p ~/.dotfiles.bak
             mv ~/$node ~/.dotfiles.bak/$node
@@ -66,7 +66,7 @@ else
 
     # Install/Link all dotfiles.
     for node in '.bashrc' '.inputrc' '.profile' '.vimrc' \
-        '.tmux.conf' '.ctags' '.gitconfig'; do
+        '.ctags' '.gitconfig'; do
         if [ -e $homedir/$node ] || [ -d $homedir/$node ]; then
             sudo -u $username mkdir -p $homedir/.dotfiles.bak
             mv $homedir/$node $homedir/.dotfiles.bak/$node
@@ -89,6 +89,14 @@ else
     sudo -u $username mkdir -p $homedir/.config/nvim
     sudo -u $username ln -sv $homedir/.dotfiles/.config/nvim/init.vim \
         $homedir/.config/nvim/init.vim
+
+    if [ -d $homedir/.config/tmux ]; then
+        sudo -u $username mkdir -p $homedir/.dotfiles.bak/.config
+        mv $homedir/.config/tmux $homedir/.dotfiles.bak/.config/tmux
+    fi
+    sudo -u $username mkdir -p $homedir/.config/tmux
+    sudo -u $username ln -sv $homedir/.dotfiles/.config/tmux/tmux.conf \
+        $homedir/.config/tmux/tmux.conf
 
     # Update.
     echo "Updating apt repository..."

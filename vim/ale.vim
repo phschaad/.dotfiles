@@ -1,5 +1,5 @@
 " phschaad dotfiles
-" Copyright (C) 2019  Philipp Schaad
+" Copyright (C) 2026 Philipp Schaad
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -27,3 +27,4 @@ let g:ale_fixers = {
 " This can potentially speed up ale. Downside is you have to close and restart
 " vim when you add linters/fixers.
 "let g:ale_cache_executable_check_failures=1
+"
